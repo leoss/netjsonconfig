@@ -188,7 +188,7 @@ class Wireless(OpenWrtConverter):
                         'wps_pushbutton', 'wps_pin']
 
     def __netjson_encryption(self, wifi):
-        if 'encryption' not in wifi:
+        if 'encryption' not in wifi or wifi['encryption'] == 'none':
             return
         settings = {}
         wps = False
